@@ -1,0 +1,24 @@
+{
+    "name": "dreeye/rcloud",
+    "description": "融云Server API",
+    "keywords": [
+        "rcloud",
+        "融云",
+        "php-rcloud"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dreeye",
+            "email": "i@mopo.me"
+        }
+    ],
+    "require": {
+        "php":">=5.5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dreeye\\Rcloud\\": "src/"
+        }
+    }
+}

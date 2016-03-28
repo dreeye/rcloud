@@ -1,0 +1,5 @@
+!.htaccess
+*.swn
+*.swo
+*.swp
+composer.lock
