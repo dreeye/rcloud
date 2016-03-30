@@ -3,6 +3,7 @@
 namespace Dreeye\Rcloud;
 
 use Dreeye\Rcloud\Core;
+use \Exception;
 
 class Api extends Core {
 
