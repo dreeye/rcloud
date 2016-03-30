@@ -22,30 +22,26 @@ class Api extends Core {
      * @return json|xml
      */
     public function messageSystemPublish($fromUserId,$toUserId = array(),$objectName,$content,$pushContent='',$pushData = '') {
-        try{
-            if(empty($fromUserId))
-                throw new Exception('发送人用户 Id 不能为空');
-            if(empty($toUserId))
-                throw new Exception('接收用户 Id 不能为空');
-            if(empty($objectName))
-                throw new Exception('消息类型 不能为空');
-            if(empty($content))
-                throw new Exception('发送消息内容 不能为空');
-            $params = array(
-                'fromUserId' => $fromUserId,
-                'objectName' => $objectName,
-                'content' => $content,
-                'pushContent' => $pushContent,
-                'pushData' => $pushData,
-                'toUserId' => $toUserId
-            );
-            $ret = $this->curl('/message/system/publish',$params);
-            if(empty($ret))
-                throw new Exception('请求失败');
-            return $ret;
-        }catch (Exception $e) {
-            print_r($e->getMessage());
-        }
+        if(empty($fromUserId))
+            throw new Exception('发送人用户 Id 不能为空');
+        if(empty($toUserId))
+            throw new Exception('接收用户 Id 不能为空');
+        if(empty($objectName))
+            throw new Exception('消息类型 不能为空');
+        if(empty($content))
+            throw new Exception('发送消息内容 不能为空');
+        $params = array(
+            'fromUserId' => $fromUserId,
+            'objectName' => $objectName,
+            'content' => $content,
+            'pushContent' => $pushContent,
+            'pushData' => $pushData,
+            'toUserId' => $toUserId
+        );
+        $ret = $this->curl('/message/system/publish',$params);
+        if(empty($ret))
+            throw new Exception('请求失败');
+        return $ret;
     }
 
     
@@ -57,19 +53,15 @@ class Api extends Core {
      * @return json|xml
      */
     public function getToken($userId, $name, $portraitUri) {
-        try{
-            if(empty($userId))
-                throw new Exception('用户 Id 不能为空');
-            if(empty($name))
-                throw new Exception('用户名称 不能为空');
-            if(empty($portraitUri))
-                throw new Exception('用户头像 URI 不能为空');
-            $ret = $this->curl('/user/getToken',array('userId'=>$userId,'name'=>$name,'portraitUri'=>$portraitUri));
-            if(empty($ret))
-                throw new Exception('请求失败');
-            return $ret;
-        }catch (Exception $e) {
-            print_r($e->getMessage());
-        }
+        if(empty($userId))
+            throw new Exception('用户 Id 不能为空');
+        if(empty($name))
+            throw new Exception('用户名称 不能为空');
+        if(empty($portraitUri))
+            throw new Exception('用户头像 URI 不能为空');
+        $ret = $this->curl('/user/getToken',array('userId'=>$userId,'name'=>$name,'portraitUri'=>$portraitUri));
+        if(empty($ret))
+            throw new Exception('请求失败');
+        return $ret;
     }
 }
