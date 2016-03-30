@@ -15,7 +15,6 @@ class Core {
      * @param string $format
      */
     public function __construct($appKey,$appSecret,$format = 'json'){
-echo '<pre>';print_r($appKey);echo '</pre>';exit(); 
         $this->appKey = $appKey;
         $this->appSecret = $appSecret;
         $this->format = $format;
